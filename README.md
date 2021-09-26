@@ -1,6 +1,6 @@
 # E Commerce Flutter App For Chetana Ecom
 
-A new Flutter project.
+A Flutter Project for Ecommerce Solutions
 
 ## Getting Started
 
