@@ -1,4 +1,4 @@
-# E_Commerce_Flutter_App_For_Chetana_Ecom
+# E Commerce Flutter App For Chetana Ecom
 
 A new Flutter project.
 
