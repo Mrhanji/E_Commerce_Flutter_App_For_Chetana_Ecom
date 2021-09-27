@@ -28,6 +28,9 @@ dependencies:
   progress_dialog:
   carousel_slider:
   google_fonts:
+  dot_navigation_bar:
+  hexcolor:
+
 
 dev_dependencies:
   flutter_test:

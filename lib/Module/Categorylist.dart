@@ -14,14 +14,14 @@ class _CategorylistState extends State<Categorylist> {
     return Container(
       child: ListView(scrollDirection: Axis.horizontal,
      // shrinkWrap: true,
-      itemExtent: 120,
+     
         children: [
         
 
 
 
 
-Container(
+Container(width: size.width*0.25,
             alignment: Alignment.center,
                     
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), border: Border.all(color: Colors.grey),color: Colors.blueGrey ),
@@ -42,15 +42,15 @@ Container(
 
 
 
-
-Container(
+ SizedBox(width: size.width*0.02,),
+Container(width: size.width*0.25,
             alignment: Alignment.center,
             margin: EdgeInsets.all(1),
         
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), border: Border.all(color: Colors.grey)),
             child: Chip(
               label: Text(
-                'Pants',
+                'Shoes',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: size.height*0.020,
@@ -60,6 +60,7 @@ Container(
               backgroundColor: Colors.white,
             ),
           ),
+          SizedBox(width: size.width*0.02,),
 
 
 
@@ -67,14 +68,14 @@ Container(
 
 
 
-          Container(
+          Container(width: size.width*0.25,
             alignment: Alignment.center,
             margin: EdgeInsets.all(1),
        
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), border: Border.all(color: Colors.grey)),
             child: Chip(
               label: Text(
-                'Pants',
+                'Jacket',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: size.height*0.020,
@@ -84,6 +85,7 @@ Container(
               backgroundColor: Colors.white,
             ),
           ),
+ SizedBox(width: size.width*0.02,),
 
 
 
@@ -92,15 +94,14 @@ Container(
 
 
 
-
-          Container(
+          Container(width: size.width*0.25,
             alignment: Alignment.center,
             margin: EdgeInsets.all(1),
            
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), border: Border.all(color: Colors.grey)),
             child: Chip(
               label: Text(
-                'Pants',
+                'T Shirt',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: size.height*0.020,
@@ -124,14 +125,14 @@ Container(
 
 
 
-          Container(
+          Container(width: size.width*0.25,
             alignment: Alignment.center,
             margin: EdgeInsets.all(1),
           
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), border: Border.all(color: Colors.grey)),
             child: Chip(
               label: Text(
-                'Pants',
+                'Shirt',
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: size.height*0.020,
@@ -154,7 +155,7 @@ Container(
 
 
 
-          Container(
+          Container(width: size.width*0.25,
             alignment: Alignment.center,
             margin: EdgeInsets.all(1),
            // height: size.height * 0.01,
