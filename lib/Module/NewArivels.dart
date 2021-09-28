@@ -86,12 +86,7 @@ class _NewArivelsState extends State<NewArivels> {
           SizedBox(
             width: size.width * 0.04,
           ),
-
-
-
-
-
-            Container(
+          Container(
               width: size.width * 0.4,
               alignment: Alignment.center,
               decoration: BoxDecoration(
@@ -160,11 +155,7 @@ class _NewArivelsState extends State<NewArivels> {
           SizedBox(
             width: size.width * 0.04,
           ),
-
-
-
-
-              Container(
+          Container(
               width: size.width * 0.4,
               alignment: Alignment.center,
               decoration: BoxDecoration(
