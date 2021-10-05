@@ -1,3 +1,2 @@
-var domain = "https://partibha.ml/";
-//var api = "https://api.partibha.ml/v1/";
-var api = "https://picsum.photos/v2/list";
+var domain = "https://chetana.shop";
+var api = "https://chetana.shop/v1/";
