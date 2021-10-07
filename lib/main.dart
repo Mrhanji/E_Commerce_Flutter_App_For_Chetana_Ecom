@@ -71,6 +71,7 @@ class _ScreenState extends State<Screen> {
             child: Center(child: Image.asset('assets/logo-dark.png')),
           ),
           Spacer(),
+          
           Container(
             padding: EdgeInsets.only(bottom: size.height * 0.041),
             child: Text('Developed By IndieSoft',
