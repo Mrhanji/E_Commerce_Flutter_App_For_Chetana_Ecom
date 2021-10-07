@@ -21,7 +21,7 @@ dependencies:
   lottie:
   url_launcher:
   carousel_pro:
-  
+  native_updater: ^0.1.0
   shared_preferences:
   http: ^0.12.2
   introduction_screen:
