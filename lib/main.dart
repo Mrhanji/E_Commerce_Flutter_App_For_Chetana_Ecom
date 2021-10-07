@@ -72,7 +72,7 @@ class _ScreenState extends State<Screen> {
           ),
           Spacer(),
           Container(
-            padding: EdgeInsets.only(bottom: size.height * 0.04),
+            padding: EdgeInsets.only(bottom: size.height * 0.041),
             child: Text('Developed By IndieSoft',
                 style: GoogleFonts.ubuntu(fontSize: size.height * 0.020)),
           )
