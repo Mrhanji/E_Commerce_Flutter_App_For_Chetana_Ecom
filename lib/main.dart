@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
@@ -12,22 +11,18 @@ import 'package:shopping/Utils/shared.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
- 
-
 
   Constants.user = await SharedPreferences.getInstance();
 
-OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+  OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
 
-OneSignal.shared.setAppId("df199b6e-1d13-4c90-bf01-4a89b5df00ea");
+  OneSignal.shared.setAppId("df199b6e-1d13-4c90-bf01-4a89b5df00ea");
 
-
-OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
+  OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
     print("Accepted permission: $accepted");
-});
+  });
   //no changes without api link
   runApp(Splash());
-    
 }
 
 class SystemUiOverlayStyle {}
@@ -73,7 +68,6 @@ class _ScreenState extends State<Screen> {
             child: Center(child: Image.asset('assets/logo-dark.png')),
           ),
           Spacer(),
-          
           Container(
             padding: EdgeInsets.only(bottom: size.height * 0.041),
             child: Text('Developed By IndieSoft',
