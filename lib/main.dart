@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shopping/Screens/Home.dart';
@@ -16,14 +17,14 @@ Future main() async {
 
   Constants.user = await SharedPreferences.getInstance();
 //   //Remove this method to stop OneSignal Debugging
-// OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
 
-// OneSignal.shared.setAppId("Appid");
+OneSignal.shared.setAppId("df199b6e-1d13-4c90-bf01-4a89b5df00ea");
 
-// // The promptForPushNotificationsWithUserResponse function will show the iOS push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission
-// OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
-//     print("Accepted permission: $accepted");
-//});
+// The promptForPushNotificationsWithUserResponse function will show the iOS push notification prompt. We recommend removing the following code and instead using an In-App Message to prompt for notification permission
+OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
+    print("Accepted permission: $accepted");
+});
   //no changes without api link
   runApp(Splash());
     
