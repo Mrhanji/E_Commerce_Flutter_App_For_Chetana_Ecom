@@ -18,7 +18,7 @@ class _HomeSliderState extends State<HomeSlider> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    var data = http.get(api).then((value) => {
+    var data = http.get(api+'slider.php').then((value) => {
           if (value.statusCode == 200)
             {
               setState(() {
@@ -34,27 +34,19 @@ class _HomeSliderState extends State<HomeSlider> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    // return Carousel(
-    //     images: b != null
-    //         ? b.map((e) {
-    //             return Card(child: FadeInImage(placeholder: AssetImage('assets/logo-dark.png'),
-    //               image:NetworkImage(e['download_url'])),shadowColor: Colors.grey,elevation: 8,);
-    //           }).toList()
-    //         : [CircularProgressIndicator()],
-    //      boxFit: BoxFit.fill,
-    //         dotBgColor: Colors.transparent,
-    //         dotSize: 0,
-
-    //         );
-
     return Carousel(
-      boxFit: BoxFit.fill,
+        images: b != null
+            ? b.map((e) {
+                return Card(child: FadeInImage(placeholder: AssetImage('assets/logo-dark.png'),
+                  image:NetworkImage(e['image'])),shadowColor: Colors.grey,elevation: 8,);
+              }).toList()
+            : [CircularProgressIndicator()],
+         boxFit: BoxFit.fill,
             dotBgColor: Colors.transparent,
             dotSize: 0,
-      images: [
-        Image.network(
-            'https://image.freepik.com/free-vector/up-30-off-sale-banner-promotion_3482-1583.jpg',fit: BoxFit.fill,)
-      ],
-    );
+
+            );
+
+    
   }
 }

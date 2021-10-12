@@ -8,6 +8,7 @@ import 'package:shopping/Module/Drawer.dart';
 import 'package:shopping/Module/HomeSlider.dart';
 import 'package:shopping/Module/NewArivels.dart';
 import 'package:shopping/Module/Sale.dart';
+import 'package:shopping/Utils/config.dart';
 import 'package:shopping/main.dart';
 
 class Home extends StatefulWidget {
@@ -28,51 +29,37 @@ class _HomeState extends State<Home> {
       home: Scaffold(
         key: _scaffoldkey,
 
-        // appBar: AppBar(
-        //     systemOverlayStyle:
-        //         SystemUiOverlayStyle(statusBarColor: Colors.red),
-        //     backwardsCompatibility: false,
-        //     automaticallyImplyLeading: false,
-        //     elevation: 0,
-        //     backgroundColor: Colors.white,
-        //     primary: true,
-        //     excludeHeaderSemantics: false,
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          leading: IconButton(
+              icon: Icon(
+                CupertinoIcons.list_bullet_below_rectangle,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                _scaffoldkey.currentState.openDrawer();
+              }),
 
-        //     ),
-        drawer: DrawerS(),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              //AppBar
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
+              centerTitle: true,
+              title: Text(appname,style: GoogleFonts.acme(color: Colors.black,fontSize: size.height*0.024),),
+              actions: [
+                IconButton(
                         icon: Icon(
-                          CupertinoIcons.list_bullet,
+                          CupertinoIcons.bell,
                           color: Colors.black,
                         ),
                         onPressed: () {
                           _scaffoldkey.currentState.openDrawer();
                         }),
-                    Container(
-                      child: Image.asset(
-                        'assets/logo-dark.png',
-                        height: size.height * 0.194,
-                      ),
-                      width: size.width * 0.6,
-                      // height: size.height * 0.19,
-                    ),
-                    IconButton(
-                        icon: Icon(
-                          CupertinoIcons.bell,
-                          color: Colors.black,
-                        ),
-                        onPressed: null)
-                  ],
-                ),
-              ),
+              ],
+        ),
+        drawer: DrawerS(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              //AppBar
+
               //Slider
               Padding(
                 padding: const EdgeInsets.only(left: 8.0, right: 8),
@@ -120,11 +107,12 @@ class _HomeState extends State<Home> {
                   child: NewArivels(),
                 ),
               ),
-  
-   Padding(
-                padding: const EdgeInsets.only(left:8.0,right: 8),
+
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 8),
                 child: Container(
-                  child: Row(crossAxisAlignment: CrossAxisAlignment.end,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -141,26 +129,22 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
-  //Sale
-  Padding(
-    padding: const EdgeInsets.only(left:8.0,right: 8),
-    child: Container(width: size.width,
-    height: size.height*0.4,
-      child: Sale(),
-    ),
-  )
-
-
+              //Sale
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0, right: 8),
+                child: Container(
+                  width: size.width,
+                  height: size.height * 0.4,
+                  child: Sale(),
+                ),
+              )
             ],
           ),
         ),
 
-
-
-
         extendBody: true, //<------like this
         bottomNavigationBar: DotNavigationBar(
-           currentIndex: 0,
+          currentIndex: 0,
           onTap: (i) {
             print(i);
           },
@@ -174,25 +158,24 @@ class _HomeState extends State<Home> {
               selectedColor: Colors.purple,
             ),
 
- /// Cart
+            /// Cart
             DotNavigationBarItem(
               icon: Icon(Icons.shopping_bag),
               selectedColor: Colors.pink,
             ),
 
-              /// Search
+            /// Search
             DotNavigationBarItem(
               icon: Icon(Icons.search),
               selectedColor: Colors.orange,
             ),
+
             /// Likes
-            /// 
+            ///
             DotNavigationBarItem(
               icon: Icon(Icons.favorite_border),
               selectedColor: Colors.pink,
             ),
-
-          
 
             // /// Profile
             // DotNavigationBarItem(
