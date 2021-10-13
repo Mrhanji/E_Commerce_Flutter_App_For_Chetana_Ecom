@@ -54,7 +54,7 @@ class _NewArivelsState extends State<NewArivels> {
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                  text: ' \₹350.99 /',
+                                  text: ' \₹350.90 /',
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w600)),
