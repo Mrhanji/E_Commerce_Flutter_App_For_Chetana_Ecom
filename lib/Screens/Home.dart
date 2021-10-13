@@ -153,8 +153,9 @@ class _HomeState extends State<Home> {
           enableFloatingNavBar: true,
           items: [
             /// Home
+            
             DotNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home,),
               selectedColor: Colors.purple,
             ),
 
