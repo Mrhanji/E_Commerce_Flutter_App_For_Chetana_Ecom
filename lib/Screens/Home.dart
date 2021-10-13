@@ -9,7 +9,7 @@ import 'package:shopping/Module/HomeSlider.dart';
 import 'package:shopping/Module/NewArivels.dart';
 import 'package:shopping/Module/Sale.dart';
 import 'package:shopping/Utils/config.dart';
-import 'package:shopping/main.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key key}) : super(key: key);
