@@ -147,7 +147,7 @@ class _HomeState extends State<Home> {
           currentIndex: 0,
           onTap: (i) {
             print(i);
-          },
+          }, 
           backgroundColor: HexColor('#ecd0a6'),
           dotIndicatorColor: Colors.black,
           enableFloatingNavBar: true,
@@ -155,26 +155,26 @@ class _HomeState extends State<Home> {
             /// Home
             
             DotNavigationBarItem(
-              icon: Icon(Icons.home,),
+              icon: Icon(Icons.home,size: size.height*0.032,),
               selectedColor: Colors.purple,
             ),
 
             /// Cart
             DotNavigationBarItem(
-              icon: Icon(Icons.shopping_bag),
+              icon: Icon(Icons.shopping_bag,size: size.height*0.032,),
               selectedColor: Colors.pink,
             ),
 
             /// Search
             DotNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.search,size: size.height*0.032,),
               selectedColor: Colors.orange,
             ),
 
             /// Likes
             ///
             DotNavigationBarItem(
-              icon: Icon(Icons.favorite_border),
+              icon: Icon(Icons.favorite_border,size: size.height*0.032,),
               selectedColor: Colors.pink,
             ),
 
