@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:shopping/Utils/config.dart';
 
@@ -41,15 +42,20 @@ class _CategorylistState extends State<Categorylist> {
             ? cat.map((e) {
                return Padding(
                  padding: EdgeInsets.only(right: 8,left: 8),
-                 child: Container(
+                 child: Card(
                  
-                   color: Colors.red,
-                   width: size.width*0.2,
-                    child: Column(
-                      children: [
-                        Image.network(e['category_image'].toString()),
-                        Text(e['category_name'])
-                      ],
+                   //color: Colors.red,
+                   
+                    child: Container(width: size.width*0.25,
+                      child: Column(
+                        children: [
+                          Container(height: size.height*0.15,
+                            child: FadeInImage(placeholder: AssetImage('assets/logo-dark.png'),
+                            image:NetworkImage(e['category_image'].toString())),
+                          ),
+                          Text(e['category_name'],style: GoogleFonts.alegreya(),maxLines: 1,overflow: TextOverflow.ellipsis,)
+                        ],
+                      ),
                     ),
                   ),
                );
