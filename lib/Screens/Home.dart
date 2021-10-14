@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  height: size.height * 0.052,
+                  height: size.height * 0.2,
                   width: size.width,
                   child: Categorylist(),
                 ),

@@ -14,13 +14,13 @@ Future main() async {
 
   Constants.user = await SharedPreferences.getInstance();
 
-  OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
+  // OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
 
-  OneSignal.shared.setAppId("df199b6e-1d13-4c90-bf01-4a89b5df00ea");
+  // OneSignal.shared.setAppId("df199b6e-1d13-4c90-bf01-4a89b5df00ea");
 
-  OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
-    print("Accepted permission: $accepted");
-  });
+  // OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
+  //   print("Accepted permission: $accepted");
+  // });
   //no changes without api link
   runApp(Splash());
 }

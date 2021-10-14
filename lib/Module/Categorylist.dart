@@ -22,7 +22,10 @@ class _CategorylistState extends State<Categorylist> {
 
   Callapi() async {
     await http.get(api + 'getcategory.php').then((value) {
-      cat = jsonDecode(value.body);
+      setState(() {
+        cat = jsonDecode(value.body);
+        print(cat);
+      });
     });
   }
 
@@ -31,16 +34,25 @@ class _CategorylistState extends State<Categorylist> {
     var size = MediaQuery.of(context).size;
     return Container(
       child: ListView(
-        scrollDirection: Axis.horizontal,
         // shrinkWrap: true,
+        scrollDirection: Axis.horizontal,
 
         children: cat != null
             ? cat.map((e) {
-                Container(
-                  child: Column(
-                    children: [Image.network(''), Text('title')],
+               return Padding(
+                 padding: EdgeInsets.only(right: 8,left: 8),
+                 child: Container(
+                 
+                   color: Colors.red,
+                   width: size.width*0.2,
+                    child: Column(
+                      children: [
+                        Image.network(e['category_image'].toString()),
+                        Text(e['category_name'])
+                      ],
+                    ),
                   ),
-                );
+               );
               }).toList()
             : [CircularProgressIndicator()],
       ),
