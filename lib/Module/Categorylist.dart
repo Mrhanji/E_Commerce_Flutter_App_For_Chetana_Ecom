@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
+import 'package:lottie/lottie.dart';
 import 'package:shopping/Utils/config.dart';
 
 class Categorylist extends StatefulWidget {
@@ -60,7 +61,7 @@ class _CategorylistState extends State<Categorylist> {
                   ),
                );
               }).toList()
-            : [CircularProgressIndicator()],
+            : [Center(child: Lottie.asset('assets/animations/loading.json'),)],
       ),
     );
   }

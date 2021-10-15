@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:lottie/lottie.dart';
 import 'package:shopping/Utils/config.dart';
 
 class HomeSlider extends StatefulWidget {
@@ -40,7 +41,7 @@ class _HomeSliderState extends State<HomeSlider> {
                 return Card(child: FadeInImage(placeholder: AssetImage('assets/logo-dark.png'),
                   image:NetworkImage(e['image'])),shadowColor: Colors.grey,elevation: 8,);
               }).toList()
-            : [CircularProgressIndicator()],
+            : [Center(child: Lottie.asset('assets/animations/loading.json'),)],
          boxFit: BoxFit.fill,
             dotBgColor: Colors.transparent,
             dotSize: 0,
