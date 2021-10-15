@@ -24,7 +24,7 @@ class _HomeSliderState extends State<HomeSlider> {
             {
               setState(() {
                 b = jsonDecode(value.body);
-                print(b);
+              //  print(b);
               })
             }
           else

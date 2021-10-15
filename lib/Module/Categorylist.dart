@@ -26,7 +26,7 @@ class _CategorylistState extends State<Categorylist> {
     await http.get(api + 'getcategory.php').then((value) {
       setState(() {
         cat = jsonDecode(value.body);
-        print(cat);
+        //print(cat);
       });
     });
   }
@@ -48,13 +48,13 @@ class _CategorylistState extends State<Categorylist> {
                    //color: Colors.red,
                    
                     child: Container(width: size.width*0.25,
-                      child: Column(
+                      child: Column( mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(height: size.height*0.15,
                             child: FadeInImage(placeholder: AssetImage('assets/logo-dark.png'),
                             image:NetworkImage(e['category_image'].toString())),
                           ),
-                          Text(e['category_name'],style: GoogleFonts.alegreya(),maxLines: 1,overflow: TextOverflow.ellipsis,)
+                          Text(e['category_name'],style: TextStyle(fontWeight: FontWeight.w500),maxLines: 1,overflow: TextOverflow.ellipsis,)
                         ],
                       ),
                     ),
