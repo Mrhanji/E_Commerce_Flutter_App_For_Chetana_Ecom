@@ -13,7 +13,7 @@ class _ProductViewState extends State<ProductView> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    print(widget.data);
+    
   }
 
   @override
@@ -23,6 +23,7 @@ class _ProductViewState extends State<ProductView> {
       home: Scaffold(
           // ignore: deprecated_member_use
           appBar: AppBar(backwardsCompatibility: true,
+          actions: [IconButton(onPressed: null, icon: Icon(Icons.favorite_border_rounded))],
         title: Text(''),
       )),
     );
