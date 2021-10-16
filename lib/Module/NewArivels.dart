@@ -48,7 +48,7 @@ class _NewArivelsState extends State<NewArivels> {
            padding: const EdgeInsets.only(left:8.0),
            child: InkWell(
           
-              onTap:()=> Navigator.push(context,MaterialPageRoute(builder: (context)=>ProductView(data: product))),
+              onTap:()=> Navigator.push(context,MaterialPageRoute(builder: (context)=>ProductView(data: e['id']))),
              child: Container(  
                   width: size.width * 0.4,
                   alignment: Alignment.center,
