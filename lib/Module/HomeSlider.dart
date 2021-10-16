@@ -40,7 +40,7 @@ class _HomeSliderState extends State<HomeSlider> {
                 return Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: Container(
-                    decoration: BoxDecoration(image: DecorationImage(image: NetworkImage(e['image'])),
+                    decoration: BoxDecoration(image: DecorationImage(image: NetworkImage(e['image']),fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(30)
                   )),
                 );
