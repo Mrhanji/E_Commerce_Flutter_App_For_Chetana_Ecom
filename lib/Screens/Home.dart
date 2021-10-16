@@ -62,10 +62,10 @@ class _HomeState extends State<Home> {
 
               //Slider
               Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8),
+                padding: const EdgeInsets.only(left: 7.0, right: 7),
                 child: Container(
                     // color: Colors.red,
-                    height: size.height * 0.3,
+                    height: size.height * 0.25,
                     child: HomeSlider()),
               ),
 

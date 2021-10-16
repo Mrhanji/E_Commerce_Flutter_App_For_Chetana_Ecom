@@ -44,7 +44,7 @@ class _HomeSliderState extends State<HomeSlider> {
          boxFit: BoxFit.fill,
             dotBgColor: Colors.transparent,
             dotSize: 0,
-
+overlayShadowSize: 50,
             );
 
     
