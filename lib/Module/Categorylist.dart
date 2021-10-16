@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:lottie/lottie.dart';
 import 'package:shopping/Screens/CategoryProducts.dart';
+import 'package:shopping/Screens/CategoryView.dart';
 
 import 'package:shopping/Utils/config.dart';
 
@@ -45,7 +46,7 @@ class _CategorylistState extends State<Categorylist> {
             ? cat.map((e) {
                return Padding(
                  padding: EdgeInsets.only(right: 8,left: 8),
-                 child: InkWell(onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>CategoryProducts(image:e['category_image'],name:e['category_name'],id:e['id'],info:e['category_info']))),
+                 child: InkWell(onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>CategoryView(image:e['category_image'],name:e['category_name'],id:e['id'],info:e['category_info']))),
                    child: Card(
                    
                      //color: Colors.red,

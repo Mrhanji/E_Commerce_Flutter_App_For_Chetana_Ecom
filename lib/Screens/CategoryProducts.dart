@@ -7,8 +7,8 @@ import 'package:http/http.dart' as http;
 import 'package:shopping/Utils/config.dart';
 
 class CategoryProducts extends StatefulWidget {
-  var id, image, name, info;
-  CategoryProducts({Key key, @required this.image, this.name, this.id, this.info})
+  var id, image, name;
+  CategoryProducts({Key key, @required this.image, this.name, this.id})
       : super(key: key);
 
   @override
