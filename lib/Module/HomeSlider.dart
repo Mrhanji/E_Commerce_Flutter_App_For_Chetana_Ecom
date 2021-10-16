@@ -37,8 +37,13 @@ class _HomeSliderState extends State<HomeSlider> {
     return Carousel(
         images: b != null
             ? b.map((e) {
-                return Card(child: FadeInImage(placeholder: AssetImage('assets/logo-dark.png'),
-                  image:NetworkImage(e['image'])),shadowColor: Colors.grey,elevation: 8,);
+                return Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Container(
+                    decoration: BoxDecoration(image: DecorationImage(image: NetworkImage(e['image'])),
+                    borderRadius: BorderRadius.circular(30)
+                  )),
+                );
               }).toList()
             : [Center(child: Lottie.asset('assets/animations/loading.json'),)],
          boxFit: BoxFit.fill,
