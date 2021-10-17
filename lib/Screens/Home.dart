@@ -8,8 +8,8 @@ import 'package:shopping/Module/Drawer.dart';
 import 'package:shopping/Module/HomeSlider.dart';
 import 'package:shopping/Module/NewArivels.dart';
 import 'package:shopping/Module/Sale.dart';
+import 'package:shopping/Screens/SearchScreen.dart';
 import 'package:shopping/Utils/config.dart';
-
 
 class Home extends StatefulWidget {
   const Home({Key key}) : super(key: key);
@@ -40,19 +40,22 @@ class _HomeState extends State<Home> {
               onPressed: () {
                 _scaffoldkey.currentState.openDrawer();
               }),
-
-              centerTitle: true,
-              title: Text(appname,style: GoogleFonts.acme(color: Colors.black,fontSize: size.height*0.024),),
-              actions: [
-                IconButton(
-                        icon: Icon(
-                          CupertinoIcons.bell,
-                          color: Colors.black,
-                        ),
-                        onPressed: () {
-                          _scaffoldkey.currentState.openDrawer();
-                        }),
-              ],
+          centerTitle: true,
+          title: Text(
+            appname,
+            style: GoogleFonts.acme(
+                color: Colors.black, fontSize: size.height * 0.024),
+          ),
+          actions: [
+            IconButton(
+                icon: Icon(
+                  CupertinoIcons.bell,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  _scaffoldkey.currentState.openDrawer();
+                }),
+          ],
         ),
         drawer: DrawerS(),
         body: SingleChildScrollView(
@@ -147,34 +150,49 @@ class _HomeState extends State<Home> {
           currentIndex: 0,
           onTap: (i) {
             print(i);
-          }, 
+            if (i == 2) {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>SearchScreen()));
+            }
+          },
           backgroundColor: HexColor('#ecd0a6'),
           dotIndicatorColor: Colors.black,
           enableFloatingNavBar: true,
           items: [
             /// Home
-            
+
             DotNavigationBarItem(
-              icon: Icon(Icons.home,size: size.height*0.032,),
+              icon: Icon(
+                Icons.home,
+                size: size.height * 0.032,
+              ),
               selectedColor: Colors.purple,
             ),
 
             /// Cart
             DotNavigationBarItem(
-              icon: Icon(Icons.shopping_bag,size: size.height*0.032,),
+              icon: Icon(
+                Icons.shopping_bag,
+                size: size.height * 0.032,
+              ),
               selectedColor: Colors.pink,
             ),
 
             /// Search
             DotNavigationBarItem(
-              icon: Icon(Icons.search,size: size.height*0.032,),
+              icon: Icon(
+                Icons.search,
+                size: size.height * 0.032,
+              ),
               selectedColor: Colors.orange,
             ),
 
             /// Likes
             ///
             DotNavigationBarItem(
-              icon: Icon(Icons.favorite_border,size: size.height*0.032,),
+              icon: Icon(
+                Icons.favorite_border,
+                size: size.height * 0.032,
+              ),
               selectedColor: Colors.pink,
             ),
 
@@ -189,3 +207,5 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+
