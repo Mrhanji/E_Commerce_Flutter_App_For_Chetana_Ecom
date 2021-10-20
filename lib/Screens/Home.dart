@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
                   CupertinoIcons.bell,
                   color: Colors.black,
                 ),
-                onPressed: () {
+                onPressed: () {   
                   _scaffoldkey.currentState.openDrawer();
                 }),
           ],
