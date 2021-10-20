@@ -163,7 +163,7 @@ class _HomeState extends State<Home> {
             DotNavigationBarItem(
               icon: Icon(
                 Icons.home,
-                size: size.height * 0.032,
+                size: size.height * 0.04,
               ),
               selectedColor: Colors.purple,
             ),
@@ -172,7 +172,7 @@ class _HomeState extends State<Home> {
             DotNavigationBarItem(
               icon: Icon(
                 Icons.shopping_bag,
-                size: size.height * 0.032,
+                size: size.height * 0.033,
               ),
               selectedColor: Colors.pink,
             ),
