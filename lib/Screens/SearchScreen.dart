@@ -22,6 +22,7 @@ class _SearchScreenState extends State<SearchScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    
     _txt.addListener(() {
       final Map<String, dynamic> project = {'name': _txt.text};
       var st = jsonEncode(project);

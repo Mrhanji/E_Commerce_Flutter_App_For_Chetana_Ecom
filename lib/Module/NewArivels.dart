@@ -69,7 +69,7 @@ class _NewArivelsState extends State<NewArivels> {
                                 height: size.height * 0.15,
                                 width: size.width,
                                 child: Image.network(
-                                  e['path'].toString(),
+                                  e['pic'].toString(),
                                   fit: BoxFit.contain,
                                 ))),
                         Positioned(
