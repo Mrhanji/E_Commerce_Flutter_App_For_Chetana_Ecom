@@ -24,14 +24,14 @@ class _NewArivelsState extends State<NewArivels> {
 
   GetProduct() async {
     await http.get(api + 'products.php').then((value) {
-         
-              setState(() {
-                product = jsonDecode(value.body);
-               
-              });
-            
-        
-        });
+      setState(() {
+        product = jsonDecode(value.body);
+      });
+    });
+  }
+
+  void dispose() {
+    super.dispose();
   }
 
   @override
@@ -39,94 +39,104 @@ class _NewArivelsState extends State<NewArivels> {
     var size = MediaQuery.of(context).size;
     return Container(
       child: ListView(
-        scrollDirection: Axis.horizontal,
-        // shrinkWrap: true,
-      
-        children: product!=null?product.map((e) {
+          scrollDirection: Axis.horizontal,
+          // shrinkWrap: true,
 
-         return Padding(
-           padding: const EdgeInsets.only(left:1.0),
-           child: InkWell(
-          
-              onTap:()=> Navigator.push(context,MaterialPageRoute(builder: (context)=>ProductView(data: e['id']))),
-             child: Card(elevation: 4,
-               child: Container(  
-                    width: size.width * 0.35,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        // border: Border.all(color: Colors.grey),
-                       color: Colors.transparent
-                        //color: Colors.blueGrey[100]
-                        ),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                            top: 2,
-                            left: 2,
-                            right: 0,
-                            child: Container(
-                                height: size.height * 0.15,
-                                width: size.width,
-                                child: Image.network(
-                                  e['pic'].toString(),
-                                  fit: BoxFit.contain,
-                                ))),
-                        Positioned(
-                          bottom: 1,
-                          left: 6,
-                          right: 0,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              
-                              Text(
-                              e['name'],
-                                style: TextStyle(fontWeight: FontWeight.w500),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              RichText(
-                                text: TextSpan(
-                                  children: [
-                                    TextSpan(
-                                        text: '\₹ '+e["sale_price"]+'/ ',
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.w600)),
-                                    TextSpan(
-                                      text: '\₹'+e["mrp"],
-                                      style: TextStyle(
-                                        color: Colors.grey[600],
-                                        decoration: TextDecoration.lineThrough,
-                                      ),
-                                    ),
-                                  ],
+          children: product != null
+              ? product.map((e) {
+                  return Padding(
+                    padding: const EdgeInsets.only(left: 1.0),
+                    child: InkWell(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  ProductView(data: e['id']))),
+                      child: Card(
+                        elevation: 4,
+                        child: Container(
+                            width: size.width * 0.35,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                // border: Border.all(color: Colors.grey),
+                                color: Colors.transparent
+                                //color: Colors.blueGrey[100]
                                 ),
-                              )
-                            ],
-                          ),
-                        ),
-                        Positioned(
-                            top: 1,
-                            left: 3,
-                            child: Chip(
-                              label: Text(
-                                e['badge'],
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              backgroundColor: Colors.red,
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                    top: 2,
+                                    left: 2,
+                                    right: 0,
+                                    child: Container(
+                                        height: size.height * 0.15,
+                                        width: size.width,
+                                        child: Image.network(
+                                          e['pic'].toString(),
+                                          fit: BoxFit.contain,
+                                        ))),
+                                Positioned(
+                                  bottom: 1,
+                                  left: 6,
+                                  right: 0,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        e['name'],
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w500),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                      RichText(
+                                        text: TextSpan(
+                                          children: [
+                                            TextSpan(
+                                                text: '\₹ ' +
+                                                    e["sale_price"] +
+                                                    '/ ',
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontWeight:
+                                                        FontWeight.w600)),
+                                            TextSpan(
+                                              text: '\₹' + e["mrp"],
+                                              style: TextStyle(
+                                                color: Colors.grey[600],
+                                                decoration:
+                                                    TextDecoration.lineThrough,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Positioned(
+                                    top: 1,
+                                    left: 3,
+                                    child: Chip(
+                                      label: Text(
+                                        e['badge'],
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      backgroundColor: Colors.red,
+                                    )),
+                              ],
                             )),
-                      ],
-                    )),
-             ),
-           ),
-         );
-        
-        }).toList():[Center(child: Lottie.asset('assets/animations/loading.json'),)]
-        
-        
-      ),
+                      ),
+                    ),
+                  );
+                }).toList()
+              : [
+                  Center(
+                    child: Lottie.asset('assets/animations/loading.json'),
+                  )
+                ]),
     );
   }
 }
